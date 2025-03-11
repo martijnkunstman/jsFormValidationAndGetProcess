@@ -16,7 +16,7 @@
         id="voornaam"
         name="voornaam"
         placeholder="voornaam"
-        onfocus="resetForm();"
+        onfocus="resetAlert();"
       />
       <div id="alertBijNaam" style="color: red"></div>
       <input
@@ -24,14 +24,14 @@
         id="email"
         name="email"
         placeholder="email"
-        onfocus="resetForm();"
+        onfocus="resetAlert();"
       />
       <div id="alertBijEmail" style="color: red"></div>
 
       <input type="submit" value="verzenden" />
     </form>
     <script>
-      function resetForm() {
+      function resetAlert() {
         document.getElementById("alertBijNaam").innerHTML = "";
         document.getElementById("alertBijEmail").innerHTML = "";
       }
