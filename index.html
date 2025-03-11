@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulier</title>
+  </head>
+  <body>
+    <form
+      action="results.html"
+      name="mijnFormulier"
+      onsubmit="return validateForm()"
+    >
+      <input
+        type="text"
+        id="voornaam"
+        name="voornaam"
+        placeholder="voornaam"
+        onfocus="resetForm();"
+      />
+      <div id="alertBijNaam" style="color: red"></div>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="email"
+        onfocus="resetForm();"
+      />
+      <div id="alertBijEmail" style="color: red"></div>
+
+      <input type="submit" value="verzenden" />
+    </form>
+    <script>
+      function resetForm() {
+        document.getElementById("alertBijNaam").innerHTML = "";
+        document.getElementById("alertBijEmail").innerHTML = "";
+      }
+      function validateForm() {
+        console.log("validateForm");
+        ///---------
+        let voornaam = document.forms["mijnFormulier"]["voornaam"].value;
+        if (voornaam == "") {
+          //alert("Name must be filled out");
+          document.getElementById("alertBijNaam").innerHTML =
+            "Naam moet ingevuld worden.";
+          return false;
+        }
+        ///---------
+        let email = document.forms["mijnFormulier"]["email"].value;
+        if (email == "") {
+          //alert("Name must be filled out");
+          document.getElementById("alertBijEmail").innerHTML =
+            "Email moet ingevuld worden.";
+          return false;
+          ///---------
+        }
+      }
+    </script>
+  </body>
+</html>

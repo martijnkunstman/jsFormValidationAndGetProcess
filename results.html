@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulier</title>
+</head>
+<body>
+    Hier komt het resultaat van het formulier te staan:
+    <div id="resultaat"></div>
+    <script>
+        //show get valiables from form
+        let url = new URL(window.location.href);
+        let voornaam = url.searchParams.get("voornaam");
+        let email = url.searchParams.get("email");
+        document.getElementById("resultaat").innerHTML = "Voornaam: " + voornaam + "<br>Email: " + email;
+
+    </script>
+</body>
+</html>
